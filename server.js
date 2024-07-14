@@ -18,8 +18,8 @@ const memberRoutes = require('./routes/memberRoutes');
 app.use('/api/member', memberRoutes);
 
 // Start server
-app.listen(process.env.PORT || 5000, () => {
-  console.log(`Server running on port ${process.env.PORT || 5000}`);
+app.listen(process.env.PORT || 4000, () => {
+  console.log(`Server running on port ${process.env.PORT || 4000}`);
 });
 
 module.exports = app
