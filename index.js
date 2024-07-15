@@ -7,7 +7,6 @@ const { connectDB } = require("./config/db");
 //to recognize JSOn
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
 
 //* DATABASE
 connectDB();
@@ -25,3 +24,4 @@ app.get('/', (req, res) => {
 app.listen(4000, () => {
   console.log(`Server running on port ${4000}`);
 });
+
