@@ -6,7 +6,7 @@
   "author": "pitanihamsaraj <pitanihamsaraj@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "axios": "^0.27.2",

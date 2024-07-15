@@ -1,6 +1,5 @@
 const Member = require('../models/MemberModel');
 
-// GET /members - Fetch all members with pagination, sorting, and searching
 exports.getAllMembers = async (req, res, next) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -11,20 +10,19 @@ exports.getAllMembers = async (req, res, next) => {
 
     let filter = {};
     if (search) {
-      // Example: Searching by all fields for string 'blog1'
       filter = {
         $or: [
           { name: { $regex: search, $options: 'i' } },
           { email: { $regex: search, $options: 'i' } },
-          // Add more fields as needed for searching
         ]
       };
     }
+
     const count = await Member.countDocuments(filter);
     const members = await Member.find(filter)
       .sort({ [sortBy]: order })
-      .skip((page - 1) * limit)
-      .limit(limit);
+      .skip(0)
+      .limit(page * limit);
 
     res.status(200).json({
       items: members,
