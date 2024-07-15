@@ -17,6 +17,10 @@ const memberRoutes = require('./routes/memberRoutes');
 // Routes
 app.use('/api/members', memberRoutes);
 
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
 // Start server
 app.listen(4000, () => {
   console.log(`Server running on port ${4000}`);
