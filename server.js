@@ -15,7 +15,7 @@ connectDB();
 const memberRoutes = require('./routes/memberRoutes');
 
 // Routes
-app.use('/api/member', memberRoutes);
+app.use('/api/members', memberRoutes);
 
 // Start server
 app.listen(process.env.PORT || 4000, () => {
